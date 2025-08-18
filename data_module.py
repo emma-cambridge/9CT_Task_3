@@ -96,12 +96,3 @@ def display_averages():
         pass
     else:
         print("Invalid. Please input Yes or No.")
-
-def search_data():
-    pass
-
-def update_data_entry():
-    pass
-
-def save_changes():
-    pass
