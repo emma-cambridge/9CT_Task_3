@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 Y7_NAPLAN_Results_df = pd.read_csv('Unformatted Pre-2023 Year 7 Reading and Writing NAPLAN Results.csv')
-
 def display_dataset_preview():
     print(Y7_NAPLAN_Results_df)
 
@@ -50,25 +49,27 @@ def display_writing_visualisation():
 
 def display_averages():
     print(f"\n=== Reading Averages ===")
-    Y7_NAPLAN_Results_df['Male Reading Mean / (S.D.)'] = Y7_NAPLAN_Results_df['Male Reading Mean / (S.D.)'].str.split(' ').str[0].astype(float)
-    m_r_mean = Y7_NAPLAN_Results_df['Male Reading Mean / (S.D.)'].mean()
+    janky_df = Y7_NAPLAN_Results_df.copy()
+    janky_df['Male Reading Mean / (S.D.)'] = janky_df['Male Reading Mean / (S.D.)'].str.split(' ').str[0].astype(float)
+    m_r_mean = janky_df['Male Reading Mean / (S.D.)'].mean()
     print(f"mean of male reading scores = {m_r_mean}")
 
-    Y7_NAPLAN_Results_df['Female Reading Mean / (S.D.)'] = Y7_NAPLAN_Results_df['Female Reading Mean / (S.D.)'].str.split(' ').str[0].astype(float)
-    f_r_mean = Y7_NAPLAN_Results_df['Female Reading Mean / (S.D.)'].mean()
+    janky_df['Female Reading Mean / (S.D.)'] = janky_df['Female Reading Mean / (S.D.)'].str.split(' ').str[0].astype(float)
+    f_r_mean = janky_df['Female Reading Mean / (S.D.)'].mean()
     print(f"mean of female reading scores = {f_r_mean}")
 
     print(f"\n=== Writing Averages ===")
-    Y7_NAPLAN_Results_df['Male Writing Mean / (S.D.)'] = Y7_NAPLAN_Results_df['Male Writing Mean / (S.D.)'].str.split(' ').str[0].astype(float)
-    m_w_mean = Y7_NAPLAN_Results_df['Male Writing Mean / (S.D.)'].mean()
+    janky_df['Male Writing Mean / (S.D.)'] = janky_df['Male Writing Mean / (S.D.)'].str.split(' ').str[0].astype(float)
+    m_w_mean = janky_df['Male Writing Mean / (S.D.)'].mean()
     print(f"mean of male writing scores = {m_w_mean}")
 
-    Y7_NAPLAN_Results_df['Female Writing Mean / (S.D.)'] = Y7_NAPLAN_Results_df['Female Writing Mean / (S.D.)'].str.split(' ').str[0].astype(float)
-    f_w_mean = Y7_NAPLAN_Results_df['Female Writing Mean / (S.D.)'].mean()
+    janky_df['Female Writing Mean / (S.D.)'] = janky_df['Female Writing Mean / (S.D.)'].str.split(' ').str[0].astype(float)
+    f_w_mean = janky_df['Female Writing Mean / (S.D.)'].mean()
     print(f"mean of female writing scores = {f_w_mean}")
 
+
     user_input = input(f"\nWould you like to see this data in a graph?")
-    if user_input == "Yes":
+    if user_input.lower() == "yes":
         avgs_graph = pd.DataFrame([
                         ['Male Reading Mean', m_r_mean,],
                         ['Female Reading Mean', f_r_mean,],
@@ -92,7 +93,7 @@ def display_averages():
 
         plt.show()
 
-    elif input == "No":
+    elif user_input.lower() == "no":
         pass
     else:
         print("Invalid. Please input Yes or No.")
