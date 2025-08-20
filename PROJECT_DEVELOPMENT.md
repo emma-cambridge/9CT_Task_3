@@ -46,7 +46,9 @@
 - https://www.unsw.edu.au/newsroom/news/2018/09/study-reveals-patterns-in-stem-grades-of-girls-versus-boys
 
 ### SEE-I Paragraph
-Girls routinely outperform boys in english and other humanities subjects which has been hypothesised to be the result of either the biological differences between male and female brains, or the social expectations that are pushed on young girls. When a child is being taught reading comprehension or writing schools in primary school studies show that they are more likely to sit and focus on the work for longer if they're female.
+Girls routinely outperform boys in english and other humanities subjects which has been hypothesised to be the result of either the biological differences between male and female brains or the social expectations that are pushed onto young girls. When a child is being taught reading comprehension or writing in primary school, studies show that they are more likely to sit and focus on the work for longer if they're female. Imagine you're teaching two children; one is a girl, one is a boy. Which would you expect to sit quietly and complete work? The girl, right? This is because of the differences in attention span between girls and boys. On the other hand this could be because parents often push girls to be more socially aware, aiding them in language acquisition and promoting skills essential for reading and writing. For example, reading to children or encouraging kids to read independently when they're old enough are activities that parents are more likely to expect of a girl.
+
+These two theories could be responsible, not only for the difference in female and male english scoring, but also the STEM gender gap which is later observed in adults because if someone is better at a subject when they're young they're more likely to continue it later in life, which for girls is usually humanities subjects and STEM subjects for boys. Therefore, encouraging more male participation in early literacy promoting activities and female engagement in maths and science is vital to get a diverse range of genders in different fields.
 
 #### Planning
 - Girls seem to routinely outperform boys in english as well as other humanities subjects. x
@@ -60,16 +62,20 @@ Girls routinely outperform boys in english and other humanities subjects which h
 # Data Dictionary
 | Field | Datatype     | Format For Display   |  Description | Example  | Validation  |
 |---------- |---------- |----------------   |--------------- | ------ | --------- |
-|  Year   |   year  |   YYYY | The year the NAPLAN test was taken  | 2018 | Must be a 4 digit number |
-|  Male Reading Mean / (S.D.) |  float64 | NNN.NN (NN.N)  | The average of male year 7 NAPLAN results for the reading test and the standard deviation of their scores in brackets | 540.8 (68.6) |
-|  Male Reading % at or above NMS | float64 | NN.N | ??? | 83.7 |  |
-| Female Reading Mean / (S.D.) | float64 | NNN.NN (NN.N) | The average of female year 7 NAPLAN results for the reading test and the standard deviation of their scores in brackets | 571.9 (57.9) |
+|  Year   |   datetime64  |   YYYY | The year the NAPLAN test was taken  | 2018 | Must be a 4 digit number |
+|  Male Reading Mean / (S.D.) |  float64 | NNN.NN (NN.N)  | The average of male year 7 NAPLAN results for the reading test and the standard deviation of their scores in brackets | 540.8 (68.6) | Must have brackets |
+|  Male Reading % at or above NMS | float64 | NN.N | The percentage of male students who are meeting the national minimum standards for year 7 reading | 83.7 | Must be a number less than 100 with one decimal place |
+| Female Reading Mean / (S.D.) | float64 | NNN.NN (NN.N) | The average of female year 7 NAPLAN results for the reading test and the standard deviation of their scores in brackets | 571.9 (57.9) | Must have brackets | 
+| Female Reading % at or above NMS | float64 | NN.N | The percentage of female students who are meeting the national minimum standards for year 7 reading | 87.9 | Must be a number less than 100 with one decimal place |
+|  Male Writing Mean / (S.D.) |  float64 | NNN.NN (NN.N)  | The average of male year 7 NAPLAN results for the writing test and the standard deviation of their scores in brackets | 540.8 (68.6) | Must have brackets |
+|  Male Writing % at or above NMS | float64 | NN.N | The percentage of male students who are meeting the national minimum standards for year 7 writing | 83.7 | Must be a number less than 100 with one decimal place |
+| Female Writing Mean / (S.D.) | float64 | NNN.NN (NN.N) | The average of female year 7 NAPLAN results for the writing test and the standard deviation of their scores in brackets | 571.9 (57.9) | Must have brackets | 
+| Female Writing % at or above NMS | float64 | NN.N | The percentage of female students who are meeting the national minimum standards for year 7 writing | 87.9 | Must be a number less than 100 with one decimal place |
 
 # Evaluation
 ### SEE-I Paragraph
-Analyse your findings and make note of areas that might need more research, provide a conclusion on your hypothesis.
-#### Planning
-- 
+My hypothesis that girls outperform boys at english was confirmed by my analysis of Year 7 NAPLAN results. In both reading and writing girls had a higher mean score amd more girls were above the National Minimum Standard (NMS). For example, the average male score in writing was 504.6 and the average female score was 536.7, lining up with my hypothesis. However this is still a relatively small difference that was subjected to change over the 2008-2022 period only in Australia so whether this is representative of broader sociiety would need to be investigated further.
+
 
 ### Peer PMI Verification
 | Plus | Minus | Implication |
@@ -82,6 +88,6 @@ My system is able to calculate the means of the data, fulfilling the analysis as
 I don't believe I managed my time as effectively as possible during this project. I procrastinated on a lot of the research aspects and ended up having to do them all towards the end of the project. However, I don't believe my github commits are a good measure of this because github desktop wasn't downloaded on my PC originally, meaning I had to do my theory in a seperate file which I later transferred to my project, so my github commits make it look much worse than it actually was. In the future I'd want to front load the theory work to give myself more time for the coding which I did entirely on one weekend which is less than ideal.
 #### Evaluate your system in in relation to its data and security
 - Is the data valid, accurate, and timely? The dataset doesn't include data from 2023, 2024, or 2025 because of a change in the reporting of NAPLAN results which limits the timeliness of the data. The data is all accurate though, and reliable as it comes from Australian Curriculum, Assessment and Reporting Authority.
-- Is it unbiased? The data is complete and paints an accurate picture of female and male performance, but the visualisations are somewhat misleading as they don't start at 0 which makes the gap in performance seem much larger than it actually is.
-- Do we need to improve its security – if so, how? The system isn't secure at all but I don't think it needs to be. If I were to improve the security I would ???
-- Could the UX be more accessible – if so, how? The UX 
+- Is it unbiased? The data is complete and paints an accurate picture of female and male performance, but the visualisations are somewhat misleading as they don't start at 0 which makes the gap in performance seem much larger than it actually is, skewing peoples' perceptions of the data. To fix this I would have to make the y axis start at 0 maybe using the ax.set_ylim() function.
+- Do we need to improve its security – if so, how? The system isn't very but I don't think it really needs to be for this project. However if I were to improve the security I would use a "best practice" approach. This involves using de-identified data, which was already done by ACAR in this project, being transparent about what data is being used, and conducting risk assessments, amongst other things. These strategies would ensure that data would be protected from unauthorised access which would become more important if this project was scaled up into one involving students' personal data.
+- Could the UX be more accessible – if so, how? The UX was definitely a bit clunky because it was only text based and if I wanted to improve it I would make visuals for the main menu so that it would be easier to navigate and would also be more aesthetically appealing.
