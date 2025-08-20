@@ -1,10 +1,7 @@
 # 9CT_Task_3
-### Mind Map
- put the photo in here
-
-
 # Requirements Outline
 ### Mind Map 
+![Mind Map Diagram](20250820_193519.jpg "Mind Map")
 
 ### Functional Requirements
 - Loading: The system should be able to load the correct files and display an error message if the file is missing
@@ -77,13 +74,17 @@ These two theories could be responsible, not only for the difference in female a
 My hypothesis that girls outperform boys at english was confirmed by my analysis of Year 7 NAPLAN results. In both reading and writing girls had a higher mean score amd more girls were above the National Minimum Standard (NMS). For example, the average male score in writing was 504.6 and the average female score was 536.7, lining up with my hypothesis. However this is still a relatively small difference that was subjected to change over the 2008-2022 period only in Australia so whether this is representative of broader sociiety would need to be investigated further.
 
 
-### Peer PMI Verification
+### Peer PMI Verification - Evelyn
 | Plus | Minus | Implication |
 |----- |------ |-------------|
-|  |  |  |
+| You have all the averages | If I put in the wrong answer when it asks if I want to see it was a graph it takes me back to the main menu also you don't have the median | The UX is pretty annoying to deal with but the data is easy to see in the visualisations |
+| You've got variety in the types of charts | It's confusing to me that the male and female lines are the opposite way around to the legend | You can see the data in different ways but they aren't super readable |
+| Your charts have different colours | The main menu isn't visual | The charts having blue and red being boy or girl kind of helps with the readability but also it's just nice to look at. If you were going to improve your project I would say making the main menu visual would be the next thing to do |
+
 #### Evaluate your system and results in relation to your Requirements Outline
 My system is able to calculate the means of the data, fulfilling the analysis aspect of the requirements outline but doesn't calculate the median because I decided that wasn't necessary for understanding the data. My system also effectively visualises the data in the form of different matplotlib charts that display the differences between female and male performance, also giving the project a high readibility. However, the UI isn't able to be navigated with ease and I didn't get time to code an error message if the data is missing, failing the loading aspect of the requirements outline.
 #### Evaluate your system in relation to peer feedback
+The peer feedback suggests that I could improve on the UX by making it a visual menu and allowing the user to go back to the averages instead of the main menu if they input something invalid on option 4 and that I could swap the titles of Male and Female around on the legend so they were in the same order as they are on the chart. These improvements would hopefully fix the readability issues that were Evelyn's main concern. The feedback also highlights the diversity in chart types which I think is something I did well in this project, however if I had more time I might add even more comparing the averages of reading and writing over time, for example. Overall, I think Evelyn's feedback was quite positive but there's definitely room for improvement in the readability and UX.
 #### Evaluate your project in relation to project management
 I don't believe I managed my time as effectively as possible during this project. I procrastinated on a lot of the research aspects and ended up having to do them all towards the end of the project. However, I don't believe my github commits are a good measure of this because github desktop wasn't downloaded on my PC originally, meaning I had to do my theory in a seperate file which I later transferred to my project, so my github commits make it look much worse than it actually was. In the future I'd want to front load the theory work to give myself more time for the coding which I did entirely on one weekend which is less than ideal.
 #### Evaluate your system in in relation to its data and security
